@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>opentoutatice-ecm.workflows-integration</groupId>
 		<artifactId>opentoutatice-addon-workflows-integration-parent</artifactId>
-		<version>RAB-4.6.1</version>
+		<version>RAB-4.6.2-RC01-SNAPSHOT</version>
 	</parent>
 
 	<properties>
