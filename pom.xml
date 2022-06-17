@@ -8,7 +8,7 @@
 	<packaging>pom</packaging>
 	<name>Workflows integration plugin - parent</name>
 	<description>Addon to integrate Nuxeo and custom workflows in portal</description>
-	<version>4.7-SNAPSHOT</version>
+	<version>RAB-4.6.1</version>
 
 	<properties>
 		<nuxeo.version>RAB-6.1.6-RC01</nuxeo.version>

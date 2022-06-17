@@ -1,0 +1,5 @@
+/var/jenkins_home/workspace/Toutatice/OpenToutatice/BuildTagAndPush/opentoutatice-addon-workflows-integration-ecm/src/main/java/fr/toutatice/ecm/workflows/integration/constants/WorkflowsConstants.java
+/var/jenkins_home/workspace/Toutatice/OpenToutatice/BuildTagAndPush/opentoutatice-addon-workflows-integration-ecm/src/main/java/fr/toutatice/ecm/workflows/integration/beans/IntegrationRoutingTaskActionsBean.java
+/var/jenkins_home/workspace/Toutatice/OpenToutatice/BuildTagAndPush/opentoutatice-addon-workflows-integration-ecm/src/main/java/fr/toutatice/ecm/workflows/integration/beans/IntegrationSkinBean.java
+/var/jenkins_home/workspace/Toutatice/OpenToutatice/BuildTagAndPush/opentoutatice-addon-workflows-integration-ecm/src/main/java/fr/toutatice/ecm/workflows/integration/constants/ExtendedSeamPrecedence.java
+/var/jenkins_home/workspace/Toutatice/OpenToutatice/BuildTagAndPush/opentoutatice-addon-workflows-integration-ecm/src/main/java/fr/toutatice/ecm/workflows/integration/beans/IntegrationDocumentRoutingActionsBean.java
