@@ -11,21 +11,20 @@
 	<version>4.7-SNAPSHOT</version>
 
 	<properties>
-		<nuxeo.version>6.0-HF42</nuxeo.version>
-		<nuxeo.cap.version>6.0</nuxeo.cap.version>
-		<nuxeo.opentoutatice.version>4.7-SNAPSHOT</nuxeo.opentoutatice.version>
+		<nuxeo.version>RAB-6.1.6-RC01</nuxeo.version>
+		<nuxeo.opentoutatice.version>RAB-4.7.44</nuxeo.opentoutatice.version>
 	</properties>
 
 	<modules>
 	   <module>opentoutatice-addon-workflows-integration-ecm</module>
-	   <module>opentoutatice-addon-workflows-integration-marketplace</module>
+	   <!--module>opentoutatice-addon-workflows-integration-marketplace</module-->
 	</modules>
 	
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.nuxeo.ecm.distribution</groupId>
-				<artifactId>nuxeo-distribution-cap</artifactId>
+				<artifactId>nuxeo-distribution-tomcat</artifactId>
 				<version>${nuxeo.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
@@ -54,13 +53,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
-				<version>2.2.1</version>
-			 	<configuration>
-					<tagBase>http://projet.toutatice.fr/repos/toutatice-ecm/opentoutatice-addons/opentoutatice-workflows-integration/tags</tagBase>
-					<releaseProfiles>unpack,pack</releaseProfiles>
-					<preparationGoals>clean install</preparationGoals>
-					<goals>deploy</goals>
-			      	</configuration>
+				<version>2.5.3</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -84,64 +77,23 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-
+	
 	<scm>
-		<developerConnection>scm:svn:http://projet.toutatice.fr/repos/toutatice-ecm/opentoutatice-addons/opentoutatice-workflows-integration/trunk</developerConnection>
+		<url>https://github.com/AC-Rennes-OpenSource/opentoutatice-addon-workflows</url>
+		<connection>scm:git:https://github.com/AC-Rennes-OpenSource/opentoutatice-addon-workflows.git</connection>
+		<developerConnection>scm:git:https://github.com/AC-Rennes-OpenSource/opentoutatice-addon-workflows.git</developerConnection>
+		<tag>HEAD</tag> 
 	</scm>
 
 	<distributionManagement>
 		<repository>
-			<id>toutatice-releases</id>
-			<url>http://projet.toutatice.fr/nexus/content/repositories/toutatice-releases</url>
+			<id>${releaseRepoId}</id>
+			<url>${releaseRepoUrl}</url>
 		</repository>
 		<snapshotRepository>
-			<id>toutatice-snapshots</id>
-			<url>http://projet.toutatice.fr/nexus/content/repositories/toutatice-snapshots</url>
+			<id>${snapshotRepoId}</id>
+			<url>${snapshotRepoUrl}</url>
 		</snapshotRepository>
 	</distributionManagement>
-	
-	<!--<profiles>
-		<profile>
-			<id>deploy-toutatice-ecm-modules</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-antrun-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>copy-jar</id>
-								<goals>
-									<goal>run</goal>
-								</goals>
-								<configuration>
-									<tasks>
-										<copy file="${basedir}/target/${project.build.finalName}.jar" todir="${build.toutatice.ecm.modules.dir}/3.1.0" />
-									</tasks>
-								</configuration>
-								<phase>package</phase>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>-->
-
-    <profiles>
-    	<profile>
-    		<id>ci</id>
-			<activation>
-				<activeByDefault>false</activeByDefault>
-			</activation>
-			<distributionManagement>
-    			<snapshotRepository>
-            		<id>galactica-ci-snapshots</id>
-            		<url>http://nexus:8081/repository/ci-snapshots</url>
-        		</snapshotRepository>
-    		</distributionManagement>
-    	</profile>
-    </profiles>
     
 </project>
-
